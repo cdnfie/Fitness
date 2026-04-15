@@ -3,995 +3,1048 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portal fitness com dicas diárias, receitas fit, pratos rápidos, programas de treino, vídeos motivacionais e academias em destaque para cuidar melhor da sua rotina." />
-  <meta name="keywords" content="fitness, receitas fit, treino, academia, dieta, hipertrofia, emagrecimento, motivação, saúde" />
-  <meta name="author" content="FitVerse AI" />
+  <title>FitVerse | Seu portal fitness diário</title>
+  <meta name="description" content="Acompanhe dicas de alimentação, receitas fitness, treinos, vídeos motivacionais e academias em destaque em um portal fitness moderno." />
+  <meta name="keywords" content="fitness, treino, receitas fit, academia, saúde, alimentação, motivação" />
+  <meta name="author" content="FitVerse" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#0b1323" />
+  <meta name="theme-color" content="#0f172a" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
-  <meta property="og:title" content="FitVerse AI | Mundo fitness com conteúdo diário" />
-  <meta property="og:description" content="Dicas de alimentação, receitas fitness, programas de treino, vídeos motivacionais e academias em destaque em um site pronto para publicar hoje." />
-  <meta property="og:site_name" content="FitVerse AI" />
-  <meta property="og:image" content="https://mudehoje.netlify.app/assets/og-fitverse.jpg" />
+  <meta property="og:title" content="FitVerse | Seu portal fitness diário" />
+  <meta property="og:description" content="Treinos, receitas, dicas e motivação em um visual moderno voltado ao mundo fitness." />
   <meta property="og:url" content="https://mudehoje.netlify.app/" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="FitVerse AI | Mundo fitness com conteúdo diário" />
-  <meta name="twitter:description" content="Conteúdo fitness pronto para web: dicas, receitas, treinos, vídeos e academias." />
-  <meta name="twitter:image" content="https://mudehoje.netlify.app/assets/og-fitverse.jpg" />
-  <link rel="canonical" href="https://mudehoje.netlify.app/" />
-  <link rel="manifest" href="/site.webmanifest" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='50' x='8' font-size='44'%3E%F0%9F%8F%8B%EF%B8%8F%3C/text%3E%3C/svg%3E" />
-  <title>FitVerse AI | Sua rotina fitness começa aqui</title>
+  <meta name="google-adsense-account" content="ca-pub-7478569656387619" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7478569656387619" crossorigin="anonymous"></script>
   <style>
-    :root {
-      --bg: #08111f;
-      --bg-soft: #0f172a;
-      --card: rgba(15, 23, 42, 0.92);
-      --card-border: rgba(148, 163, 184, 0.14);
-      --text: #f8fafc;
-      --muted: #cbd5e1;
-      --muted-2: #94a3b8;
-      --green: #22c55e;
-      --green-2: #16a34a;
-      --cyan: #06b6d4;
-      --amber: #f59e0b;
-      --red: #ef4444;
-      --shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
-      --radius: 22px;
-      --radius-sm: 14px;
-      --content-width: 1280px;
+    :root{
+      --bg:#07111f;
+      --bg-2:#0d1a2e;
+      --card:#101f36;
+      --card-2:#142742;
+      --line:rgba(255,255,255,.08);
+      --text:#f8fafc;
+      --muted:#b6c2d4;
+      --green:#22c55e;
+      --green-2:#16a34a;
+      --yellow:#facc15;
+      --shadow:0 18px 60px rgba(0,0,0,.35);
+      --radius:24px;
+      --radius-sm:18px;
+      --max:1220px;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Inter, Arial, Helvetica, sans-serif;
-      color: var(--text);
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
       background:
-        radial-gradient(circle at top right, rgba(6, 182, 212, 0.16), transparent 22%),
-        radial-gradient(circle at top left, rgba(34, 197, 94, 0.16), transparent 20%),
-        linear-gradient(180deg, #030712 0%, #08111f 40%, #0b1323 100%);
-      min-height: 100vh;
+        radial-gradient(circle at top left, rgba(34,197,94,.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(250,204,21,.10), transparent 20%),
+        linear-gradient(180deg, #07111f 0%, #0a1425 100%);
+      color:var(--text);
     }
 
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    button, input { font: inherit; }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
 
-    .shell {
-      width: min(100%, var(--content-width));
-      margin: 0 auto;
-      padding: 0 18px;
+    .container{
+      width:min(calc(100% - 32px), var(--max));
+      margin:0 auto;
     }
 
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(18px);
-      background: rgba(3, 7, 18, 0.78);
-      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:blur(18px);
+      background:rgba(7,17,31,.72);
+      border-bottom:1px solid var(--line);
     }
 
-    .topbar-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      min-height: 72px;
+    .topbar-inner{
+      min-height:76px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 800;
-      letter-spacing: 0.2px;
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      font-weight:800;
+      letter-spacing:.3px;
     }
 
-    .brand-badge {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, var(--green), var(--cyan));
-      box-shadow: var(--shadow);
-      font-size: 22px;
+    .brand-badge{
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, var(--green), var(--yellow));
+      color:#07111f;
+      font-size:22px;
+      box-shadow:var(--shadow);
     }
 
-    .brand small {
-      display: block;
-      color: var(--muted-2);
-      font-size: 12px;
-      font-weight: 600;
-      margin-top: 2px;
+    .nav{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
     }
 
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
+    .nav a{
+      color:var(--muted);
+      padding:10px 14px;
+      border-radius:999px;
+      transition:.2s ease;
+      font-size:14px;
     }
 
-    .nav a {
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 700;
+    .nav a:hover{background:rgba(255,255,255,.06);color:#fff}
+
+    .hero{
+      padding:42px 0 22px;
     }
 
-    .nav a:hover { color: var(--text); }
-
-    .hero { padding: 34px 0 20px; }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.35fr 0.85fr;
-      gap: 18px;
-      align-items: stretch;
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:24px;
+      align-items:stretch;
     }
 
-    .hero-card, .side-card, .section, .ad-box, .stat, .tip-card, .gym-card, .video-card, .recipe-card, .plan-card, .faq-item {
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+    .hero-card,
+    .side-card,
+    .panel,
+    .cta-box,
+    .mini-card,
+    .video-card,
+    .gym-card,
+    .tip-card,
+    .recipe-card,
+    .workout-card,
+    .footer-card{
+      background:linear-gradient(180deg, rgba(20,39,66,.96), rgba(10,20,37,.96));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
     }
 
-    .hero-card {
-      padding: 28px;
-      overflow: hidden;
-      position: relative;
+    .hero-card{
+      position:relative;
+      overflow:hidden;
+      padding:30px;
+      min-height:420px;
     }
 
-    .hero-card::after {
-      content: "";
-      position: absolute;
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      right: -40px;
-      top: -50px;
-      background: radial-gradient(circle, rgba(34, 197, 94, 0.32), transparent 68%);
-      pointer-events: none;
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      inset:auto -60px -100px auto;
+      width:320px;
+      height:320px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(34,197,94,.18), transparent 70%);
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 800;
-      color: #dcfce7;
-      background: rgba(34, 197, 94, 0.14);
-      border: 1px solid rgba(34, 197, 94, 0.18);
-      margin-bottom: 14px;
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:rgba(34,197,94,.12);
+      border:1px solid rgba(34,197,94,.24);
+      color:#d8ffe6;
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:13px;
+      margin-bottom:18px;
     }
 
-    h1 {
-      margin: 0 0 12px;
-      font-size: clamp(32px, 6vw, 52px);
-      line-height: 1.03;
-      letter-spacing: -1.2px;
+    h1{
+      margin:0 0 14px;
+      font-size:clamp(34px, 5vw, 62px);
+      line-height:1.04;
+      letter-spacing:-1.4px;
     }
 
-    .hero-copy {
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.6;
-      max-width: 760px;
-      margin: 0 0 22px;
+    .hero p{
+      margin:0;
+      max-width:720px;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.6;
     }
 
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 22px;
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:24px;
     }
 
-    .btn {
-      border: 0;
-      border-radius: 14px;
-      padding: 13px 18px;
-      font-weight: 800;
-      cursor: pointer;
-      transition: transform 0.2s ease, filter 0.2s ease;
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      border:none;
+      cursor:pointer;
+      border-radius:999px;
+      padding:15px 22px;
+      font-weight:700;
+      font-size:15px;
+      transition:.2s ease;
     }
 
-    .btn:hover { transform: translateY(-1px); filter: brightness(1.03); }
-    .btn-primary { color: #03110a; background: linear-gradient(135deg, #4ade80, #22c55e); }
-    .btn-secondary { color: var(--text); background: rgba(15, 23, 42, 0.88); border: 1px solid rgba(148, 163, 184, 0.18); }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
+    .btn-primary{
+      background:linear-gradient(135deg, var(--green), var(--green-2));
+      color:#03110a;
     }
 
-    .stat { padding: 16px; }
-    .stat .label { color: var(--muted-2); font-size: 13px; font-weight: 700; margin-bottom: 8px; }
-    .stat .value { font-size: 28px; font-weight: 900; letter-spacing: -0.7px; }
-
-    .side-card {
-      padding: 20px;
-      display: grid;
-      gap: 14px;
-      align-content: start;
+    .btn-primary:hover{transform:translateY(-1px)}
+    .btn-secondary{
+      background:rgba(255,255,255,.06);
+      color:#fff;
+      border:1px solid var(--line);
     }
 
-    .side-card h3, .section-head h2 { margin: 0; font-size: 22px; letter-spacing: -0.4px; }
-    .muted { color: var(--muted); line-height: 1.6; }
-
-    .bullet-list {
-      display: grid;
-      gap: 10px;
-      padding: 0;
-      margin: 0;
-      list-style: none;
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:12px;
+      margin-top:28px;
     }
 
-    .bullet-list li {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.5;
+    .mini-card{
+      padding:16px;
+      border-radius:20px;
+      background:rgba(255,255,255,.04);
     }
 
-    .bullet-list span {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--green);
-      margin-top: 8px;
-      flex: 0 0 auto;
+    .mini-card strong{
+      display:block;
+      font-size:24px;
+      margin-bottom:6px;
     }
 
-    .layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 310px;
-      gap: 18px;
-      padding-bottom: 36px;
+    .mini-card span{
+      color:var(--muted);
+      font-size:13px;
     }
 
-    .main, .aside { display: grid; gap: 18px; }
-    .aside { align-content: start; }
-    .section { padding: 24px; }
-
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 16px;
-      margin-bottom: 18px;
-      flex-wrap: wrap;
+    .hero-side{
+      display:grid;
+      gap:18px;
     }
 
-    .section-head p { margin: 8px 0 0; color: var(--muted); font-size: 14px; }
-
-    .pill {
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(6, 182, 212, 0.12);
-      color: #a5f3fc;
-      font-size: 12px;
-      font-weight: 800;
-      border: 1px solid rgba(6, 182, 212, 0.18);
-      white-space: nowrap;
+    .side-card{
+      padding:22px;
     }
 
-    .tips-grid, .recipes-grid, .video-grid, .gym-grid, .faq-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
+    .side-card h3{
+      margin:0 0 10px;
+      font-size:20px;
     }
 
-    .plans-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
+    .side-card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.6;
     }
 
-    .tip-card, .recipe-card, .plan-card, .video-card, .gym-card, .faq-item { padding: 18px; }
-
-    .card-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      border-radius: 999px;
-      padding: 7px 10px;
-      font-size: 12px;
-      font-weight: 800;
-      color: #dcfce7;
-      background: rgba(34, 197, 94, 0.12);
-      border: 1px solid rgba(34, 197, 94, 0.2);
-      margin-bottom: 10px;
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:16px;
     }
 
-    .recipe-card .card-tag { background: rgba(245, 158, 11, 0.12); color: #fde68a; border-color: rgba(245, 158, 11, 0.2); }
-    .plan-card .card-tag { background: rgba(6, 182, 212, 0.12); color: #a5f3fc; border-color: rgba(6, 182, 212, 0.2); }
-    .video-card .card-tag { background: rgba(239, 68, 68, 0.12); color: #fecaca; border-color: rgba(239, 68, 68, 0.2); }
-
-    .card-title {
-      font-size: 19px;
-      font-weight: 800;
-      line-height: 1.3;
-      margin: 0 0 10px;
+    .chip{
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.06);
+      color:#fff;
+      font-size:13px;
+      border:1px solid var(--line);
     }
 
-    .card-copy { color: var(--muted); font-size: 14px; line-height: 1.6; margin: 0 0 12px; }
-
-    .mini-meta { display: flex; flex-wrap: wrap; gap: 8px; }
-    .mini-meta span {
-      font-size: 12px;
-      color: var(--muted);
-      padding: 7px 10px;
-      border: 1px solid rgba(148, 163, 184, 0.16);
-      border-radius: 999px;
-      background: rgba(148, 163, 184, 0.05);
+    .ad-wrap{
+      margin:18px 0 10px;
+      padding:12px;
+      border-radius:22px;
+      border:1px dashed rgba(255,255,255,.18);
+      background:rgba(255,255,255,.03);
     }
 
-    .video-embed {
-      width: 100%;
-      aspect-ratio: 16/9;
-      border: 0;
-      border-radius: 16px;
-      margin-top: 12px;
-      background: #020617;
+    .section{
+      padding:18px 0;
     }
 
-    .gym-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 10px;
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:18px;
     }
 
-    .rating { font-size: 14px; font-weight: 800; color: #fde68a; }
-
-    .ad-box {
-      padding: 18px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+    .section-title{
+      margin:0;
+      font-size:clamp(24px, 3vw, 36px);
+      letter-spacing:-.6px;
     }
 
-    .ad-box::before {
-      content: "Google AdSense";
-      position: absolute;
-      right: 14px;
-      top: 12px;
-      font-size: 11px;
-      color: rgba(203, 213, 225, 0.45);
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      font-weight: 800;
+    .section-subtitle{
+      margin:8px 0 0;
+      color:var(--muted);
+      max-width:720px;
+      line-height:1.6;
     }
 
-    .ad-label { font-size: 12px; color: var(--muted-2); font-weight: 800; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.8px; }
-    .ad-note { color: var(--muted); font-size: 13px; line-height: 1.5; margin-top: 12px; }
-    .aside-sticky { position: sticky; top: 90px; display: grid; gap: 18px; }
-
-    .mini-search {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 10px;
-      margin-top: 16px;
+    .toolbar{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
     }
 
-    .mini-search input {
-      border-radius: 14px;
-      border: 1px solid rgba(148, 163, 184, 0.18);
-      background: rgba(2, 6, 23, 0.75);
-      color: var(--text);
-      padding: 13px 14px;
-      outline: none;
+    .toolbar button{
+      border:none;
+      cursor:pointer;
+      padding:12px 18px;
+      border-radius:999px;
+      font-weight:700;
+      background:rgba(255,255,255,.08);
+      color:#fff;
+      border:1px solid var(--line);
     }
 
-    .faq-item h3, .legal h2, .contact-card h2 {
-      margin: 0 0 10px;
-      font-size: 18px;
-      letter-spacing: -0.2px;
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
     }
 
-    .legal-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
+    .grid-2{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:18px;
     }
 
-    .legal, .contact-card {
-      padding: 22px;
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+    .tip-card,.recipe-card,.workout-card,.video-card,.gym-card{
+      padding:20px;
+      min-height:100%;
     }
 
-    .footer {
-      border-top: 1px solid rgba(148, 163, 184, 0.1);
-      color: var(--muted-2);
-      font-size: 13px;
-      padding: 24px 0 42px;
+    .card-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:14px;
     }
 
-    .footer strong { color: var(--text); }
-    .footer-links {
-      display: flex;
-      gap: 12px 16px;
-      flex-wrap: wrap;
-      margin-top: 10px;
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border-radius:999px;
+      padding:8px 12px;
+      background:rgba(34,197,94,.12);
+      border:1px solid rgba(34,197,94,.24);
+      color:#d8ffe6;
+      font-size:12px;
+      font-weight:700;
     }
 
-    .disclaimer {
-      color: #cbd5e1;
-      background: rgba(245, 158, 11, 0.08);
-      border: 1px solid rgba(245, 158, 11, 0.18);
-      border-radius: 18px;
-      padding: 16px 18px;
-      line-height: 1.6;
-      font-size: 14px;
+    .score{
+      color:var(--yellow);
+      font-weight:700;
+      font-size:14px;
     }
 
-    @media (max-width: 1100px) {
-      .layout, .hero-grid, .legal-grid { grid-template-columns: 1fr; }
-      .aside-sticky { position: static; }
-      .tips-grid, .recipes-grid, .video-grid, .gym-grid, .plans-grid, .faq-grid { grid-template-columns: 1fr 1fr; }
+    .card-title{
+      margin:0 0 10px;
+      font-size:22px;
+      letter-spacing:-.3px;
     }
 
-    @media (max-width: 760px) {
-      .topbar-inner { min-height: auto; padding: 14px 0; align-items: flex-start; }
-      .nav { gap: 10px 14px; }
-      .hero { padding-top: 20px; }
-      .hero-card, .section, .side-card, .ad-box, .legal, .contact-card { padding: 18px; }
-      .tips-grid, .recipes-grid, .video-grid, .gym-grid, .plans-grid, .stats, .faq-grid, .mini-search { grid-template-columns: 1fr; }
-      h1 { font-size: 34px; }
-      .hero-copy { font-size: 15px; }
-      .section-head { align-items: flex-start; }
+    .card-text{
+      margin:0;
+      color:var(--muted);
+      line-height:1.65;
+      font-size:15px;
+    }
+
+    .meta-list{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:16px;
+    }
+
+    .meta{
+      border-radius:999px;
+      padding:9px 12px;
+      background:rgba(255,255,255,.05);
+      border:1px solid var(--line);
+      color:#dfe7f1;
+      font-size:13px;
+    }
+
+    .split-banner{
+      margin:26px 0 4px;
+      display:grid;
+      grid-template-columns:1fr .9fr;
+      gap:18px;
+    }
+
+    .cta-box{
+      padding:26px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .cta-box::after{
+      content:"";
+      position:absolute;
+      right:-40px;
+      top:-30px;
+      width:180px;
+      height:180px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(250,204,21,.16), transparent 70%);
+    }
+
+    .cta-box h3{
+      margin:0 0 10px;
+      font-size:26px;
+    }
+
+    .cta-box p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.65;
+    }
+
+    .video-frame{
+      margin-top:14px;
+      border-radius:20px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:#000;
+    }
+
+    iframe{
+      width:100%;
+      height:240px;
+      border:0;
+      display:block;
+    }
+
+    .gym-rank{
+      display:grid;
+      gap:14px;
+    }
+
+    .gym-card{
+      display:grid;
+      grid-template-columns:auto 1fr auto;
+      gap:16px;
+      align-items:center;
+    }
+
+    .rank-number{
+      width:54px;
+      height:54px;
+      border-radius:18px;
+      display:grid;
+      place-items:center;
+      font-size:22px;
+      font-weight:800;
+      background:linear-gradient(135deg, rgba(34,197,94,.25), rgba(250,204,21,.2));
+      border:1px solid var(--line);
+    }
+
+    .gym-card h4{
+      margin:0 0 6px;
+      font-size:20px;
+    }
+
+    .gym-card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.5;
+      font-size:14px;
+    }
+
+    .gym-badge{
+      padding:10px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      font-size:12px;
+      color:#fff;
+      white-space:nowrap;
+    }
+
+    .footer{
+      padding:28px 0 44px;
+    }
+
+    .footer-card{
+      padding:24px;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:24px;
+    }
+
+    .footer p{
+      color:var(--muted);
+      line-height:1.7;
+      margin:0;
+    }
+
+    .footer-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      align-content:flex-start;
+      justify-content:flex-end;
+    }
+
+    .footer-links a{
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.05);
+      border:1px solid var(--line);
+      color:#fff;
+      font-size:14px;
+    }
+
+    @media (max-width: 1024px){
+      .hero-grid,
+      .split-banner,
+      .footer-card{
+        grid-template-columns:1fr;
+      }
+      .grid-3{grid-template-columns:repeat(2,1fr)}
+    }
+
+    @media (max-width: 720px){
+      .topbar-inner{
+        flex-direction:column;
+        align-items:flex-start;
+        padding:12px 0;
+      }
+      .nav{width:100%}
+      .nav a{padding:8px 10px}
+      .hero-card{padding:22px;min-height:auto}
+      .stats,.grid-3,.grid-2{
+        grid-template-columns:1fr;
+      }
+      .section-head{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .gym-card{
+        grid-template-columns:1fr;
+        align-items:flex-start;
+      }
+      iframe{height:220px}
+      .footer-links{justify-content:flex-start}
     }
   </style>
-
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7478569656387619" crossorigin="anonymous"></script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "FitVerse AI",
-    "url": "https://mudehoje.netlify.app/",
-    "description": "Portal fitness com conteúdo diário sobre alimentação, treino, motivação e academias.",
-    "inLanguage": "pt-BR",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://mudehoje.netlify.app/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
-
-  <meta name="google-adsense-account" content="ca-pub-7478569656387619" />
 </head>
 <body>
   <header class="topbar">
-    <div class="shell topbar-inner">
-      <div class="brand">
-        <div class="brand-badge">🏋️</div>
-        <div>
-          <div>FitVerse AI</div>
-          <small>Alimentação, treino e motivação para o seu dia a dia</small>
-        </div>
-      </div>
+    <div class="container topbar-inner">
+      <a class="brand" href="#topo">
+        <span class="brand-badge">💪</span>
+        <span>FitVerse</span>
+      </a>
       <nav class="nav">
-        <a href="#dicas">Dicas</a>
+        <a href="#alimentacao">Alimentação</a>
         <a href="#receitas">Receitas</a>
         <a href="#treinos">Treinos</a>
         <a href="#videos">Vídeos</a>
         <a href="#academias">Academias</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contato">Contato</a>
       </nav>
     </div>
   </header>
 
-  <main class="shell">
+  <main id="topo">
     <section class="hero">
-      <div class="hero-grid">
-        <article class="hero-card">
-          <div class="eyebrow">⚡ Conteúdo novo todos os dias</div>
-          <h1>Seu espaço fitness com inspiração, receitas, treinos e ideias para viver melhor.</h1>
-          <p class="hero-copy">
-            Encontre dicas simples de alimentação, pratos rápidos, receitas fitness, programas de treino, vídeos motivacionais
-            e sugestões de academias para manter a disciplina e deixar sua rotina mais leve e saudável.
+      <div class="container hero-grid">
+        <div class="hero-card">
+          <span class="eyebrow">⚡ Conteúdo fitness atualizado para sua rotina</span>
+          <h1>Seu espaço para treinar melhor, comer melhor e manter o foco todos os dias.</h1>
+          <p>
+            Descubra ideias de alimentação, receitas práticas, treinos por objetivo, vídeos motivacionais
+            e academias em destaque em uma experiência mais bonita, rápida e fácil de navegar.
           </p>
-          <div class="hero-actions">
-            <button class="btn btn-primary" onclick="refreshAllContent()">Ver novas sugestões</button>
-            <a class="btn btn-secondary" href="#receitas">Explorar receitas</a>
-          </div>
-          <div class="stats">
-            <div class="stat">
-              <div class="label">Sugestões do dia</div>
-              <div class="value">6 temas</div>
-            </div>
-            <div class="stat">
-              <div class="label">Experiência</div>
-              <div class="value">Leve e rápida</div>
-            </div>
-            <div class="stat">
-              <div class="label">Foco</div>
-              <div class="value">Seu bem-estar</div>
-            </div>
-          </div>
-        </article>
 
-        <aside class="side-card">
-          <h3>O que você encontra aqui</h3>
-          <p class="muted">
-            Tudo foi pensado para facilitar sua rotina com conteúdos fáceis de consumir, navegar e aproveitar no celular ou no computador.
-          </p>
-          <ul class="bullet-list">
-            <li><span></span>Dicas práticas para encaixar alimentação melhor no seu dia</li>
-            <li><span></span>Receitas fitness simples para quando faltar tempo</li>
-            <li><span></span>Treinos organizados para diferentes objetivos</li>
-            <li><span></span>Vídeos e inspirações para manter o foco</li>
-          </ul>
-          <div class="mini-search">
-            <input id="searchInput" type="text" placeholder="Buscar por treino, receita, academia..." />
-            <button class="btn btn-secondary" onclick="searchContent()">Buscar</button>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#treinos">Ver treinos de hoje</a>
+            <a class="btn btn-secondary" href="#receitas">Explorar receitas fit</a>
           </div>
-        </aside>
+
+          <div class="stats">
+            <div class="mini-card">
+              <strong>+120</strong>
+              <span>Ideias de rotina para alimentação e treino</span>
+            </div>
+            <div class="mini-card">
+              <strong>7 dias</strong>
+              <span>De inspiração para manter constância</span>
+            </div>
+            <div class="mini-card">
+              <strong>Top gyms</strong>
+              <span>Academias bem avaliadas e com boa estrutura</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div class="side-card">
+            <h3>Destaques do dia</h3>
+            <p>Monte uma rotina mais equilibrada com conteúdo pensado para quem quer resultado, energia e consistência.</p>
+            <div class="chips">
+              <span class="chip">Receitas rápidas</span>
+              <span class="chip">Foco no shape</span>
+              <span class="chip">Bem-estar</span>
+              <span class="chip">Motivação</span>
+            </div>
+          </div>
+
+          <div class="side-card">
+            <h3>Seu portal fitness com visual mais forte</h3>
+            <p>
+              Navegue por seções mais claras, cards modernos e conteúdo fácil de consumir no celular,
+              tablet ou computador.
+            </p>
+          </div>
+
+          <div class="ad-wrap">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-7478569656387619"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          </div>
+        </div>
       </div>
     </section>
 
-    <div class="layout">
-      <div class="main">
-        <section class="section" id="dicas">
-          <div class="section-head">
-            <div>
-              <h2>Dicas diárias de alimentação</h2>
-              <p>Orientações práticas para rotina, constância e melhores escolhas no dia a dia.</p>
-            </div>
-            <div class="pill" id="tips-updated">Atualizado hoje</div>
+    <section id="alimentacao" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Dicas de alimentação para o dia a dia</h2>
+            <p class="section-subtitle">
+              Sugestões simples para melhorar sua rotina, manter energia durante o dia e facilitar escolhas melhores na alimentação.
+            </p>
           </div>
-          <div class="tips-grid" id="tips-grid"></div>
-        </section>
+          <div class="toolbar">
+            <button onclick="renderTips()">Atualizar dicas</button>
+          </div>
+        </div>
+        <div class="grid-3" id="tipsGrid"></div>
+      </div>
+    </section>
 
-        <section class="ad-box" id="adsense">
-          <div class="ad-label">Parceiros e destaques</div>
+    <section id="receitas" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Pratos rápidos e receitas fitness</h2>
+            <p class="section-subtitle">
+              Receitas práticas para quem quer comer bem sem perder muito tempo na cozinha.
+            </p>
+          </div>
+          <div class="toolbar">
+            <button onclick="renderRecipes()">Trocar receitas</button>
+          </div>
+        </div>
+        <div class="grid-3" id="recipesGrid"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split-banner">
+        <div class="cta-box">
+          <h3>Constância vale mais do que perfeição.</h3>
+          <p>
+            O importante é conseguir manter sua rotina de forma realista. Pequenas escolhas feitas todos os dias trazem resultados mais duradouros.
+          </p>
+          <div class="chips" style="margin-top:18px">
+            <span class="chip">Foco diário</span>
+            <span class="chip">Treino com propósito</span>
+            <span class="chip">Alimentação inteligente</span>
+          </div>
+        </div>
+        <div class="ad-wrap" style="margin:0;display:flex;align-items:center;">
+          <ins class="adsbygoogle"
+               style="display:block;width:100%;"
+               data-ad-client="ca-pub-7478569656387619"
+               data-ad-slot="1234567891"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+      </div>
+    </section>
+
+    <section id="treinos" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Programas de treino</h2>
+            <p class="section-subtitle">
+              Ideias de treino para diferentes objetivos, com divisão clara e foco em constância.
+            </p>
+          </div>
+          <div class="toolbar">
+            <button onclick="renderWorkouts()">Atualizar treinos</button>
+          </div>
+        </div>
+        <div class="grid-3" id="workoutsGrid"></div>
+      </div>
+    </section>
+
+    <section id="videos" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Vídeos para motivar sua rotina</h2>
+            <p class="section-subtitle">
+              Conteúdo inspirador para reforçar disciplina, energia e vontade de continuar.
+            </p>
+          </div>
+          <div class="toolbar">
+            <button onclick="renderVideos()">Trocar vídeos</button>
+          </div>
+        </div>
+        <div class="grid-2" id="videosGrid"></div>
+      </div>
+    </section>
+
+    <section id="academias" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Academias em destaque</h2>
+            <p class="section-subtitle">
+              Espaços conhecidos pela estrutura, ambiente e experiência para quem quer treinar bem.
+            </p>
+          </div>
+          <div class="toolbar">
+            <button onclick="renderGyms()">Atualizar lista</button>
+          </div>
+        </div>
+        <div class="gym-rank" id="gymsGrid"></div>
+
+        <div class="ad-wrap" style="margin-top:20px;">
           <ins class="adsbygoogle"
                style="display:block"
                data-ad-client="ca-pub-7478569656387619"
-               data-ad-slot="1234567890"
+               data-ad-slot="1234567892"
                data-ad-format="auto"
                data-full-width-responsive="true"></ins>
-          <p class="ad-note">
-            Espaço reservado para novidades, marcas parceiras e conteúdos em destaque.
-          </p>
-        </section>
-
-        <section class="section" id="receitas">
-          <div class="section-head">
-            <div>
-              <h2>Pratos rápidos e receitas fitness</h2>
-              <p>Receitas de execução simples, com foco em proteína, saciedade e praticidade.</p>
-            </div>
-            <div class="pill">Sugestões do momento</div>
-          </div>
-          <div class="recipes-grid" id="recipes-grid"></div>
-        </section>
-
-        <section class="section" id="treinos">
-          <div class="section-head">
-            <div>
-              <h2>Programas de treino</h2>
-              <p>Estruturas para hipertrofia, perda de gordura, consistência e condicionamento.</p>
-            </div>
-            <div class="pill">Treinos para evoluir</div>
-          </div>
-          <div class="plans-grid" id="plans-grid"></div>
-        </section>
-
-        <section class="section" id="videos">
-          <div class="section-head">
-            <div>
-              <h2>Vídeos motivacionais</h2>
-              <p>Conteúdo de alta energia para manter disciplina, foco e constância.</p>
-            </div>
-            <div class="pill">Energia e motivação</div>
-          </div>
-          <div class="video-grid" id="videos-grid"></div>
-        </section>
-
-        <section class="section" id="academias">
-          <div class="section-head">
-            <div>
-              <h2>Academias hypadas e com boa infraestrutura</h2>
-              <p>Uma seleção de redes conhecidas por ambiente agradável, estrutura e boa experiência para treinar.</p>
-            </div>
-            <div class="pill">Em destaque</div>
-          </div>
-          <div class="gym-grid" id="gyms-grid"></div>
-        </section>
-
-        <section class="section" id="faq">
-          <div class="section-head">
-            <div>
-              <h2>Perguntas frequentes</h2>
-              <p>Respostas rápidas para as dúvidas mais comuns de quem está começando ou retomando a rotina fitness.</p>
-            </div>
-            <div class="pill">Dúvidas comuns</div>
-          </div>
-          <div class="faq-grid">
-            <article class="faq-item">
-              <h3>O conteúdo é atualizado todos os dias?</h3>
-              <p class="card-copy">As sugestões da página podem mudar ao longo do uso para trazer novas ideias de refeições, treinos e motivação.</p>
-            </article>
-            <article class="faq-item">
-              <h3>O site funciona em celular?</h3>
-              <p class="card-copy">Sim. Você pode acessar o conteúdo com conforto no celular, no tablet ou no computador.</p>
-            </article>
-            <article class="faq-item">
-              <h3>O site é fácil de usar?</h3>
-              <p class="card-copy">Sim. A navegação foi pensada para ser simples, rápida e intuitiva, mesmo para quem só quer entrar e ver o conteúdo do dia.</p>
-            </article>
-            <article class="faq-item">
-              <h3>Tem conteúdo para quem está começando?</h3>
-              <p class="card-copy">Tem sim. Há sugestões mais leves, ideias de refeições fáceis e orientações pensadas para quem quer criar constância sem complicação.</p>
-            </article>
-          </div>
-        </section>
-
-        <section class="section" id="publicar" style="display:none;">
-          <div class="section-head">
-            <div>
-              <h2>Como publicar hoje mesmo</h2>
-              <p>Fluxo mais curto para colocar no ar ainda hoje e já começar a divulgar.</p>
-            </div>
-            <div class="pill">Publicação rápida</div>
-          </div>
-          <ul class="bullet-list">
-            <li><span></span>Envie estes arquivos para o Netlify em <strong>Deploy manually</strong> ou arraste a pasta compactada.</li>
-            <li><span></span>Troque no <strong>index.html</strong> o domínio de exemplo por seu domínio real nas metatags.</li>
-            <li><span></span>Substitua o ID do AdSense e os slots reais antes de solicitar revisão dos anúncios.</li>
-            <li><span></span>Depois de publicar, teste no celular e abra o endereço em aba anônima.</li>
-          </ul>
-        </section>
-
-        <section class="disclaimer">
-          Este conteúdo foi criado para inspirar hábitos mais saudáveis no dia a dia. Respeite seu ritmo, adapte as escolhas à sua realidade e busque orientação profissional quando necessário.
-        </section>
-
-        <section class="legal-grid">
-          <article class="legal" id="privacidade">
-            <h2>Política de privacidade</h2>
-            <p class="card-copy">O FitVerse AI pode exibir anúncios e coletar dados básicos de navegação por cookies e ferramentas analíticas para melhorar a experiência do usuário e medir desempenho de páginas.</p>
-            <p class="card-copy">Ao navegar no site, o usuário entende que serviços de terceiros, como Google AdSense e YouTube, podem aplicar suas próprias políticas de cookies e processamento de dados.</p>
-          </article>
-          <article class="legal" id="termos">
-            <h2>Termos de uso</h2>
-            <p class="card-copy">O conteúdo disponibilizado tem finalidade informativa. Não substitui orientação médica, nutricional ou física individualizada.</p>
-            <p class="card-copy">O uso do site implica concordância com estas condições e com o caráter editorial das recomendações apresentadas nas páginas.</p>
-          </article>
-        </section>
-
-        <section class="contact-card" id="contato">
-          <h2>Contato</h2>
-          <p class="card-copy">Quer falar com a gente, mandar sugestões ou indicar uma academia e uma receita favorita? Entre em contato.</p>
-          <p class="card-copy"><strong>E-mail:</strong> contato@mudehoje.netlify.app</p>
-        </section>
-      </div>
-
-      <aside class="aside">
-        <div class="aside-sticky">
-          <section class="ad-box">
-            <div class="ad-label">Novidades do universo fitness</div>
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-7478569656387619"
-                 data-ad-slot="2345678901"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <p class="ad-note">Espaço para novidades, marcas parceiras e conteúdos que combinam com sua rotina fitness.</p>
-          </section>
-
-          <section class="side-card">
-            <h3>Motivos para voltar sempre</h3>
-            <ul class="bullet-list">
-              <li><span></span>Encontrar novas ideias para alimentação e treino</li>
-              <li><span></span>Ver sugestões rápidas para dias corridos</li>
-              <li><span></span>Manter a motivação com vídeos e inspirações</li>
-              <li><span></span>Descobrir academias bem avaliadas e populares</li>
-            </ul>
-          </section>
-
-          <section class="ad-box">
-            <div class="ad-label">Mais conteúdos para você</div>
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-7478569656387619"
-                 data-ad-slot="3456789012"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <p class="ad-note">Mais espaço para destaques, recomendações e novidades ligadas ao mundo fitness.</p>
-          </section>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         </div>
-      </aside>
-    </div>
-  </main>
+      </div>
+    </section>
 
-  <footer class="shell footer">
-    <strong>FitVerse AI</strong> — alimentação, treino e motivação para ajudar você a manter uma rotina mais saudável.
-    <div class="footer-links">
-      <a href="#privacidade">Privacidade</a>
-      <a href="#termos">Termos</a>
-      <a href="#contato">Contato</a>
-      <a href="#dicas">Início</a>
-    </div>
-  </footer>
+    <section class="footer">
+      <div class="container">
+        <div class="footer-card">
+          <div>
+            <h3 style="margin-top:0;font-size:26px;">FitVerse</h3>
+            <p>
+              Um portal visual, leve e inspirador para quem quer viver melhor com treinos, alimentação equilibrada,
+              receitas práticas e mais motivação no dia a dia.
+            </p>
+          </div>
+          <div class="footer-links">
+            <a href="#topo">Início</a>
+            <a href="#alimentacao">Alimentação</a>
+            <a href="#receitas">Receitas</a>
+            <a href="#treinos">Treinos</a>
+            <a href="#videos">Vídeos</a>
+            <a href="#academias">Academias</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <script>
     const tips = [
       {
-        category: 'Nutrição inteligente',
-        title: 'Monte o prato pensando em proteína primeiro',
-        text: 'Comece a refeição com uma fonte principal de proteína magra e complete com vegetais e um carboidrato bem definido. Isso facilita aderência e saciedade.',
-        meta: ['Alta saciedade', 'Execução simples', 'Bom para rotina']
+        tag: "Energia",
+        title: "Comece o dia com água e uma boa refeição",
+        text: "Uma rotina mais leve pela manhã ajuda no foco, na disposição e no controle da fome ao longo do dia.",
+        meta: ["Hidratação", "Café da manhã", "Disposição"],
+        score: "⭐ 4.9"
       },
       {
-        category: 'Performance diária',
-        title: 'Hidratação afeta força, fome e recuperação',
-        text: 'Distribuir água ao longo do dia melhora rendimento, reduz fadiga percebida e evita confundir sede com fome.',
-        meta: ['Mais disposição', 'Ajuda no foco', 'Baixo custo']
+        tag: "Equilíbrio",
+        title: "Monte pratos com proteína, legumes e um bom carboidrato",
+        text: "Combinar os grupos certos deixa sua alimentação mais completa e ajuda a manter saciedade por mais tempo.",
+        meta: ["Saciedade", "Rotina", "Praticidade"],
+        score: "⭐ 4.8"
       },
       {
-        category: 'Constância',
-        title: 'Prefira refeições previsíveis nos dias corridos',
-        text: 'Quando a rotina apertar, use combinações rápidas e repetíveis. Comer bem com consistência vence a “dieta perfeita” que não se sustenta.',
-        meta: ['Menos fricção', 'Melhor aderência', 'Organização']
+        tag: "Constância",
+        title: "Prepare pequenas porções antecipadas para evitar correria",
+        text: "Deixar itens prontos facilita a semana e reduz a chance de cair em escolhas menos interessantes.",
+        meta: ["Organização", "Semana", "Facilidade"],
+        score: "⭐ 4.7"
       },
       {
-        category: 'Pré-treino',
-        title: 'Treino bom começa antes da academia',
-        text: 'Um lanche simples com carboidrato e proteína, feito no horário certo, costuma melhorar a energia e a intensidade sem complicação.',
-        meta: ['Mais energia', 'Melhor rendimento', 'Rotina prática']
+        tag: "Performance",
+        title: "Faça lanches simples antes de treinar",
+        text: "Uma fruta, iogurte ou outra opção leve pode ajudar no rendimento e deixar o treino mais confortável.",
+        meta: ["Pré-treino", "Leve", "Rendimento"],
+        score: "⭐ 4.8"
       },
       {
-        category: 'Recuperação',
-        title: 'Sono bom é parte do seu plano físico',
-        text: 'Sem sono consistente, a recuperação piora, o apetite desregula e o treino tende a render menos. Priorize horário regular.',
-        meta: ['Recuperação', 'Hormonal', 'Disciplina']
+        tag: "Rotina",
+        title: "Tenha horários mais previsíveis para comer",
+        text: "Criar um ritmo mais organizado para as refeições ajuda a manter consistência sem exageros.",
+        meta: ["Regularidade", "Bem-estar", "Controle"],
+        score: "⭐ 4.6"
       },
       {
-        category: 'Escolhas rápidas',
-        title: 'Tenha sempre 3 refeições-coringa na semana',
-        text: 'Deixe definidas três opções rápidas para café, almoço e jantar. Isso reduz erro por impulso e acelera a tomada de decisão.',
-        meta: ['Agilidade', 'Menos improviso', 'Mais controle']
+        tag: "Foco",
+        title: "Reduza excessos e mantenha escolhas que você consegue repetir",
+        text: "O melhor plano é aquele que cabe no seu dia e pode ser sustentado sem sofrimento.",
+        meta: ["Praticidade", "Longo prazo", "Disciplina"],
+        score: "⭐ 4.9"
       }
     ];
 
     const recipes = [
       {
-        tag: 'Receita rápida',
-        title: 'Omelete proteica com aveia e queijo branco',
-        text: 'Bata ovos, misture aveia, queijo branco e ervas. Finalize na frigideira antiaderente para uma refeição rápida e funcional.',
-        meta: ['12 minutos', 'Alta proteína', 'Baixo custo']
+        tag: "Rápida",
+        title: "Omelete reforçada com frango",
+        text: "Uma opção prática para qualquer hora do dia, com preparo rápido e sensação de refeição completa.",
+        meta: ["Alta praticidade", "Boa saciedade", "Poucos passos"],
+        score: "⏱️ 10 min"
       },
       {
-        tag: 'Pós-treino',
-        title: 'Frango desfiado com arroz e legumes salteados',
-        text: 'Uma base clássica e eficiente para praticidade semanal, com bom equilíbrio entre proteína, carboidrato e fibras.',
-        meta: ['18 minutos', 'Marmita ideal', 'Boa saciedade']
+        tag: "Doce fit",
+        title: "Panqueca de banana com toque proteico",
+        text: "Uma receita gostosa para variar o café da manhã ou o lanche com uma pegada mais leve.",
+        meta: ["Café da manhã", "Lanche", "Saborosa"],
+        score: "⏱️ 12 min"
       },
       {
-        tag: 'Café da manhã',
-        title: 'Panqueca de banana com whey e canela',
-        text: 'Misture banana, ovo, aveia e whey. Fica simples, saboroso e encaixa bem em rotinas focadas em constância.',
-        meta: ['10 minutos', 'Doce fit', 'Boa energia']
+        tag: "Clássica",
+        title: "Frango grelhado com batata e salada",
+        text: "Combinação simples, tradicional e fácil de encaixar em quem busca mais organização na rotina.",
+        meta: ["Almoço", "Equilíbrio", "Tradicional"],
+        score: "⏱️ 20 min"
       },
       {
-        tag: 'Jantar leve',
-        title: 'Bowl fit com atum, grão-de-bico e folhas',
-        text: 'Montagem rápida, boa densidade nutricional e ótima opção para quem quer algo prático sem perder qualidade.',
-        meta: ['9 minutos', 'Rico em fibras', 'Refrescante']
+        tag: "Leve",
+        title: "Salada completa com atum e ovos",
+        text: "Ideal para dias corridos, trazendo praticidade sem abrir mão de uma refeição que sustenta.",
+        meta: ["Jantar", "Leve", "Rápida"],
+        score: "⏱️ 8 min"
+      },
+      {
+        tag: "Pós-treino",
+        title: "Wrap fitness com recheio proteico",
+        text: "Boa pedida para quem quer algo fácil de levar e prático para encaixar na correria.",
+        meta: ["Fácil de levar", "Prático", "Saboroso"],
+        score: "⏱️ 9 min"
+      },
+      {
+        tag: "Dia a dia",
+        title: "Arroz, legumes e proteína grelhada",
+        text: "Estrutura simples de prato para repetir durante a semana sem complicar sua rotina.",
+        meta: ["Marmita", "Semana", "Organização"],
+        score: "⏱️ 18 min"
       }
     ];
 
-    const plans = [
+    const workouts = [
       {
-        tag: 'Hipertrofia',
-        title: 'Treino A/B para ganho de massa',
-        text: 'Divisão enxuta com foco em movimentos base, progressão de carga e consistência semanal.',
-        meta: ['4x semana', 'Peito/costas/pernas', 'Carga progressiva']
+        tag: "Hipertrofia",
+        title: "Treino superior para ganhar volume",
+        text: "Divisão pensada para trabalhar peito, costas, ombros e braços com mais intensidade ao longo da semana.",
+        meta: ["Superior", "Força", "Volume"],
+        score: "🔥 Forte"
       },
       {
-        tag: 'Emagrecimento',
-        title: 'Plano híbrido com musculação + cardio',
-        text: 'Estrutura equilibrada para preservar massa muscular e elevar gasto calórico ao longo da semana.',
-        meta: ['5x semana', 'Cardio inteligente', 'Boa aderência']
+        tag: "Emagrecimento",
+        title: "Sessão dinâmica com ritmo mais acelerado",
+        text: "Boa estratégia para quem busca movimentar mais o corpo e elevar o gasto durante o treino.",
+        meta: ["Ritmo", "Cardio", "Constância"],
+        score: "🔥 Intenso"
       },
       {
-        tag: 'Iniciantes',
-        title: 'Treino de adaptação com base completa',
-        text: 'Modelo simples para quem está voltando ou começando, com foco em técnica, segurança e ritmo.',
-        meta: ['3x semana', 'Corpo inteiro', 'Baixa complexidade']
+        tag: "Pernas",
+        title: "Treino completo de membros inferiores",
+        text: "Foco em movimentos tradicionais para construir força, firmeza e uma base sólida no treino.",
+        meta: ["Pernas", "Glúteos", "Base"],
+        score: "🔥 Pesado"
       },
       {
-        tag: 'Condicionamento',
-        title: 'Circuito funcional para rotina corrida',
-        text: 'Blocos curtos e intensos para elevar frequência cardíaca e manter constância com menos tempo.',
-        meta: ['25 minutos', 'Alta intensidade', 'Dinâmico']
+        tag: "Iniciante",
+        title: "Rotina simples para começar com segurança",
+        text: "Uma organização mais leve para quem está dando os primeiros passos e quer criar hábito.",
+        meta: ["Adaptação", "Segurança", "Hábito"],
+        score: "🔥 Leve"
       },
       {
-        tag: 'Glúteos e pernas',
-        title: 'Ênfase em membros inferiores',
-        text: 'Treino focado em padrões de agachamento, avanço e extensão de quadril, com boa organização de volume.',
-        meta: ['2 sessões-chave', 'Volume direcionado', 'Força + estética']
+        tag: "Definição",
+        title: "Treino combinado para manter ritmo e foco",
+        text: "Mistura entre exercícios localizados e blocos mais dinâmicos para dar variedade à semana.",
+        meta: ["Variedade", "Dinâmico", "Disciplina"],
+        score: "🔥 Moderado"
       },
       {
-        tag: 'Core e postura',
-        title: 'Plano complementar de estabilidade',
-        text: 'Ótima adição para melhorar controle de tronco, estabilidade e suporte aos treinos principais.',
-        meta: ['15 minutos', 'Complementar', 'Boa manutenção']
+        tag: "Constância",
+        title: "Plano semanal com dias bem organizados",
+        text: "Separar grupos musculares e descanso ajuda a manter regularidade e evitar treinos aleatórios.",
+        meta: ["Planejamento", "Semana", "Regularidade"],
+        score: "🔥 Equilibrado"
       }
     ];
 
     const videos = [
       {
-        title: 'Disciplina vence motivação ocasional',
-        text: 'Vídeo para lembrar que resultado vem de repetição e consistência, não apenas de empolgação momentânea.',
-        embed: 'https://www.youtube.com/embed/ZXsQAXx_ao0'
+        tag: "Motivação",
+        title: "Disciplina para manter o foco",
+        text: "Um lembrete visual para reforçar que resultado vem de repetição, paciência e presença diária.",
+        url: "https://www.youtube.com/embed/ml6cT4AZdqI"
       },
       {
-        title: 'Treine mesmo nos dias medianos',
-        text: 'Conteúdo motivacional com foco em execução, rotina e longo prazo.',
-        embed: 'https://www.youtube.com/embed/mgmVOuLgFB0'
+        tag: "Mentalidade",
+        title: "Treine mesmo quando a motivação oscilar",
+        text: "A disciplina é o que sustenta a rotina quando a empolgação inicial diminui.",
+        url: "https://www.youtube.com/embed/UBMk30rjy0o"
       },
       {
-        title: 'Mudança física exige repetição',
-        text: 'Mensagem forte sobre processo, disciplina e evolução gradual com propósito.',
-        embed: 'https://www.youtube.com/embed/tbnzAVRZ9Xc'
+        tag: "Energia",
+        title: "Entre no clima de treino",
+        text: "Use vídeos inspiradores para entrar no ritmo, elevar a energia e manter a mente no objetivo.",
+        url: "https://www.youtube.com/embed/fQ7ewHFw_I8"
       },
       {
-        title: 'Faça o básico muito bem feito',
-        text: 'Vídeo para reforçar que comida, treino e sono continuam sendo os três pilares centrais.',
-        embed: 'https://www.youtube.com/embed/wnHW6o8WMas'
+        tag: "Superação",
+        title: "Lembre do porquê você começou",
+        text: "Conteúdos que ajudam a reconectar com sua meta e voltar ao caminho com mais força.",
+        url: "https://www.youtube.com/embed/ZiGE3-L4vyg"
       }
     ];
 
     const gyms = [
       {
-        name: 'Bodytech',
-        rating: '4.9 ★',
-        text: 'Rede muito lembrada por estrutura ampla, variedade de equipamentos, aulas e ambiente que costuma agradar quem busca uma experiência mais completa.',
-        meta: ['Infra premium', 'Aulas', 'Ambiente forte']
+        name: "Bodytech",
+        text: "Estrutura premium, ambiente cuidado e variedade de equipamentos para treinos completos.",
+        badge: "Infraestrutura premium"
       },
       {
-        name: 'Bio Ritmo',
-        rating: '4.8 ★',
-        text: 'Conhecida por uma experiência mais sofisticada, com boa estrutura e espaços que costumam agradar quem valoriza conforto.',
-        meta: ['Alto padrão', 'Bem equipada', 'Boa experiência']
+        name: "Bio Ritmo",
+        text: "Espaço moderno, clima motivador e proposta voltada para quem busca experiência diferenciada.",
+        badge: "Ambiente moderno"
       },
       {
-        name: 'Smart Fit',
-        rating: '4.6 ★',
-        text: 'Muito conhecida pelo custo-benefício, presença em várias regiões e boa opção para encaixar treino na rotina.',
-        meta: ['Popular', 'Acesso amplo', 'Bom custo-benefício']
+        name: "Smart Fit",
+        text: "Presença forte, boa disponibilidade e opção prática para manter frequência com custo acessível.",
+        badge: "Grande presença"
       },
       {
-        name: 'Bluefit',
-        rating: '4.5 ★',
-        text: 'Rede conhecida em várias regiões, com boa relação entre preço, espaço e variedade de aparelhos.',
-        meta: ['Rede em expansão', 'Boa estrutura', 'Acessível']
+        name: "Bluefit",
+        text: "Boa estrutura, visual atual e proposta equilibrada para diferentes perfis de treino.",
+        badge: "Boa estrutura"
       }
     ];
 
-    function randomize(items, take) {
-      const copy = [...items].sort(() => Math.random() - 0.5);
-      return copy.slice(0, take);
-    }
-
-    function renderTips() {
-      const target = document.getElementById('tips-grid');
-      target.innerHTML = randomize(tips, 4).map(item => `
-        <article class="tip-card searchable">
-          <div class="card-tag">${item.category}</div>
-          <h3 class="card-title">${item.title}</h3>
-          <p class="card-copy">${item.text}</p>
-          <div class="mini-meta">${item.meta.map(meta => `<span>${meta}</span>`).join('')}</div>
-        </article>
-      `).join('');
-      document.getElementById('tips-updated').textContent = 'Atualizado em ' + new Date().toLocaleDateString('pt-BR');
-    }
-
-    function renderRecipes() {
-      const target = document.getElementById('recipes-grid');
-      target.innerHTML = randomize(recipes, 4).map(item => `
-        <article class="recipe-card searchable">
-          <div class="card-tag">${item.tag}</div>
-          <h3 class="card-title">${item.title}</h3>
-          <p class="card-copy">${item.text}</p>
-          <div class="mini-meta">${item.meta.map(meta => `<span>${meta}</span>`).join('')}</div>
-        </article>
-      `).join('');
-    }
-
-    function renderPlans() {
-      const target = document.getElementById('plans-grid');
-      target.innerHTML = randomize(plans, 6).map(item => `
-        <article class="plan-card searchable">
-          <div class="card-tag">${item.tag}</div>
-          <h3 class="card-title">${item.title}</h3>
-          <p class="card-copy">${item.text}</p>
-          <div class="mini-meta">${item.meta.map(meta => `<span>${meta}</span>`).join('')}</div>
-        </article>
-      `).join('');
-    }
-
-    function renderVideos() {
-      const target = document.getElementById('videos-grid');
-      target.innerHTML = randomize(videos, 4).map(item => `
-        <article class="video-card searchable">
-          <div class="card-tag">Vídeo motivacional</div>
-          <h3 class="card-title">${item.title}</h3>
-          <p class="card-copy">${item.text}</p>
-          <iframe class="video-embed" loading="lazy" src="${item.embed}" title="${item.title}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </article>
-      `).join('');
-    }
-
-    function renderGyms() {
-      const target = document.getElementById('gyms-grid');
-      target.innerHTML = randomize(gyms, 4).map(item => `
-        <article class="gym-card searchable">
-          <div class="gym-head">
-            <h3 class="card-title" style="margin-bottom:0;">${item.name}</h3>
-            <div class="rating">${item.rating}</div>
-          </div>
-          <p class="card-copy">${item.text}</p>
-          <div class="mini-meta">${item.meta.map(meta => `<span>${meta}</span>`).join('')}</div>
-        </article>
-      `).join('');
-    }
-
-    function searchContent() {
-      const term = document.getElementById('searchInput').value.trim().toLowerCase();
-      const cards = document.querySelectorAll('.searchable');
-      if (!term) {
-        cards.forEach(card => card.style.display = 'block');
-        return;
+    function shuffle(arr){
+      const copy = [...arr];
+      for(let i = copy.length - 1; i > 0; i--){
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
       }
-      cards.forEach(card => {
-        const content = card.innerText.toLowerCase();
-        card.style.display = content.includes(term) ? 'block' : 'none';
-      });
+      return copy;
     }
 
-    function refreshAllContent() {
-      renderTips();
-      renderRecipes();
-      renderPlans();
-      renderVideos();
-      renderGyms();
+    function renderCardGrid(targetId, items, type){
+      const target = document.getElementById(targetId);
+      target.innerHTML = shuffle(items).slice(0, 6).map(item => `
+        <article class="${type}">
+          <div class="card-top">
+            <span class="tag">${item.tag}</span>
+            <span class="score">${item.score || ""}</span>
+          </div>
+          <h3 class="card-title">${item.title}</h3>
+          <p class="card-text">${item.text}</p>
+          <div class="meta-list">
+            ${item.meta.map(m => `<span class="meta">${m}</span>`).join("")}
+          </div>
+        </article>
+      `).join("");
     }
 
-    function initAds() {
-      const adBlocks = document.querySelectorAll('.adsbygoogle');
-      adBlocks.forEach(() => {
-        try {
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        } catch (e) {
-        }
-      });
+    function renderTips(){
+      renderCardGrid("tipsGrid", tips, "tip-card");
     }
 
-    refreshAllContent();
-    initAds();
+    function renderRecipes(){
+      renderCardGrid("recipesGrid", recipes, "recipe-card");
+    }
+
+    function renderWorkouts(){
+      renderCardGrid("workoutsGrid", workouts, "workout-card");
+    }
+
+    function renderVideos(){
+      const target = document.getElementById("videosGrid");
+      target.innerHTML = shuffle(videos).slice(0, 4).map(item => `
+        <article class="video-card">
+          <div class="card-top">
+            <span class="tag">${item.tag}</span>
+          </div>
+          <h3 class="card-title">${item.title}</h3>
+          <p class="card-text">${item.text}</p>
+          <div class="video-frame">
+            <iframe src="${item.url}" title="${item.title}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function renderGyms(){
+      const target = document.getElementById("gymsGrid");
+      target.innerHTML = shuffle(gyms).map((gym, index) => `
+        <article class="gym-card">
+          <div class="rank-number">${index + 1}</div>
+          <div>
+            <h4>${gym.name}</h4>
+            <p>${gym.text}</p>
+          </div>
+          <span class="gym-badge">${gym.badge}</span>
+        </article>
+      `).join("");
+    }
+
+    renderTips();
+    renderRecipes();
+    renderWorkouts();
+    renderVideos();
+    renderGyms();
   </script>
 </body>
 </html>
