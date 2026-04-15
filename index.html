@@ -3,37 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FitVerse | Portal fitness moderno</title>
-  <meta name="description" content="Portal fitness com dicas de alimentação, receitas, treinos, vídeos livres de uso e academias em destaque." />
-  <meta name="keywords" content="fitness, academia, receitas fit, treino, alimentação saudável, motivação" />
+  <title>FitVerse | Treino, alimentação e rotina fitness</title>
+  <meta name="description" content="Portal fitness com dicas de alimentação, receitas práticas, treinos, imagens inspiracionais de treino e academias em destaque." />
+  <meta name="keywords" content="fitness, treino, academia, receitas fit, alimentação saudável, motivação, treino em casa" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0b1220" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
-  <meta property="og:title" content="FitVerse | Portal fitness moderno" />
-  <meta property="og:description" content="Dicas, receitas, treinos e inspiração fitness em um visual forte para celular e desktop." />
+  <meta property="og:title" content="FitVerse | Treino, alimentação e rotina fitness" />
+  <meta property="og:description" content="Dicas, receitas, treinos e imagens fitness em um portal moderno para celular e desktop." />
   <meta property="og:url" content="https://mudehoje.netlify.app/" />
+  <link rel="canonical" href="https://mudehoje.netlify.app/" />
+
   <meta name="google-adsense-account" content="ca-pub-7478569656387619" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7478569656387619" crossorigin="anonymous"></script>
+
   <style>
     :root{
-      --bg:#07101d;
-      --bg-soft:#0d1a2c;
+      --bg:#08111f;
+      --bg2:#0d182b;
       --card:#11223a;
-      --card-soft:#152946;
+      --card2:#162b49;
       --line:rgba(255,255,255,.08);
       --text:#f8fafc;
       --muted:#b8c4d6;
       --green:#22c55e;
-      --green-strong:#16a34a;
+      --green2:#16a34a;
       --yellow:#facc15;
-      --red:#fb7185;
       --shadow:0 18px 50px rgba(0,0,0,.35);
       --radius:24px;
-      --radius-sm:18px;
       --max:1240px;
     }
-
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
@@ -46,6 +46,7 @@
         linear-gradient(180deg, #07101d 0%, #0d1727 100%);
     }
     a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
     .container{width:min(calc(100% - 28px), var(--max));margin:0 auto}
 
     .access-strip{
@@ -54,412 +55,202 @@
       backdrop-filter:blur(14px);
     }
     .access-inner{
-      min-height:58px;
-      display:flex;
-      flex-wrap:wrap;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px 18px;
-      padding:10px 0;
+      min-height:58px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
+      gap:10px 18px; padding:10px 0;
     }
-    .access-title{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      color:#dff7e7;
-      font-weight:700;
-    }
+    .access-title{display:flex; align-items:center; gap:10px; color:#dff7e7; font-weight:700}
     .pulse{
-      width:10px;
-      height:10px;
-      border-radius:50%;
-      background:var(--green);
-      box-shadow:0 0 0 0 rgba(34,197,94,.7);
-      animation:pulse 1.8s infinite;
+      width:10px; height:10px; border-radius:50%; background:var(--green);
+      box-shadow:0 0 0 0 rgba(34,197,94,.7); animation:pulse 1.8s infinite;
     }
     @keyframes pulse{
       0%{box-shadow:0 0 0 0 rgba(34,197,94,.7)}
       70%{box-shadow:0 0 0 10px rgba(34,197,94,0)}
       100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}
     }
-    .access-metrics{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-    }
+    .access-metrics{display:flex; flex-wrap:wrap; gap:10px}
     .metric-chip{
-      padding:10px 14px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      font-size:14px;
-      color:#e7eef8;
+      padding:10px 14px; border-radius:999px; border:1px solid var(--line);
+      background:rgba(255,255,255,.04); font-size:14px; color:#e7eef8;
     }
     .metric-chip strong{color:#fff}
 
     .topbar{
-      position:sticky;
-      top:0;
-      z-index:40;
-      border-bottom:1px solid var(--line);
-      backdrop-filter:blur(16px);
-      background:rgba(7,16,29,.78);
+      position:sticky; top:0; z-index:50; border-bottom:1px solid var(--line);
+      backdrop-filter:blur(16px); background:rgba(7,16,29,.78);
     }
     .topbar-inner{
-      min-height:74px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
+      min-height:74px; display:flex; align-items:center; justify-content:space-between; gap:16px;
     }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      font-weight:800;
-      letter-spacing:.3px;
-    }
+    .brand{display:flex; align-items:center; gap:14px; font-weight:800; letter-spacing:.3px}
     .brand-badge{
-      width:46px;height:46px;border-radius:15px;
-      display:grid;place-items:center;
-      background:linear-gradient(135deg,var(--green),var(--yellow));
-      color:#05110b;font-size:24px;
+      width:46px;height:46px;border-radius:15px; display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--green),var(--yellow)); color:#05110b;font-size:24px;
       box-shadow:var(--shadow);
     }
-    .nav{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-    }
+    .nav{display:flex; flex-wrap:wrap; gap:8px}
     .nav a{
-      color:var(--muted);
-      padding:10px 14px;
-      border-radius:999px;
-      transition:.2s ease;
-      font-size:14px;
+      color:var(--muted); padding:10px 14px; border-radius:999px; transition:.2s ease; font-size:14px;
     }
     .nav a:hover{background:rgba(255,255,255,.06);color:#fff}
 
     .hero{padding:28px 0 22px}
     .hero-grid{
-      display:grid;
-      grid-template-columns:1.18fr .82fr;
-      gap:20px;
-      align-items:stretch;
+      display:grid; grid-template-columns:1.15fr .85fr; gap:20px; align-items:stretch;
     }
-    .hero-card,.panel,.card,.rank-card,.footer-card{
+    .hero-card,.panel,.card,.rank-card,.footer-card,.policy-box{
       background:linear-gradient(180deg, rgba(17,34,58,.98), rgba(9,18,33,.96));
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
+      border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow);
     }
     .hero-card{
-      position:relative;
-      overflow:hidden;
-      padding:30px;
-      min-height:420px;
+      position:relative; overflow:hidden; padding:30px; min-height:420px;
     }
     .hero-card::after{
-      content:"";
-      position:absolute;
-      right:-70px;
-      top:-70px;
-      width:260px;height:260px;border-radius:50%;
+      content:""; position:absolute; right:-70px; top:-70px; width:260px;height:260px;border-radius:50%;
       background:radial-gradient(circle, rgba(34,197,94,.16), transparent 68%);
     }
     .eyebrow{
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      padding:9px 14px;
-      border-radius:999px;
-      background:rgba(34,197,94,.12);
-      border:1px solid rgba(34,197,94,.22);
-      color:#ddffe9;
-      font-size:13px;
-      margin-bottom:16px;
-      font-weight:700;
+      display:inline-flex; gap:8px; align-items:center; padding:9px 14px; border-radius:999px;
+      background:rgba(34,197,94,.12); border:1px solid rgba(34,197,94,.22);
+      color:#ddffe9; font-size:13px; margin-bottom:16px; font-weight:700;
     }
     h1{
-      margin:0 0 14px;
-      font-size:clamp(34px, 5.2vw, 64px);
-      line-height:1.02;
-      letter-spacing:-1.5px;
-      max-width:720px;
+      margin:0 0 14px; font-size:clamp(34px, 5.2vw, 64px); line-height:1.02; letter-spacing:-1.5px; max-width:720px;
     }
-    .hero p{
-      margin:0;
-      max-width:720px;
-      color:var(--muted);
-      line-height:1.7;
-      font-size:18px;
-    }
-    .hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:24px;
-    }
+    .hero p{margin:0; max-width:720px; color:var(--muted); line-height:1.7; font-size:18px}
+    .hero-actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:24px}
     .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      border:none;
-      cursor:pointer;
-      border-radius:999px;
-      padding:14px 20px;
-      font-weight:800;
-      font-size:15px;
-      transition:.2s ease;
+      display:inline-flex; align-items:center; justify-content:center; border:none; cursor:pointer; border-radius:999px;
+      padding:14px 20px; font-weight:800; font-size:15px; transition:.2s ease;
     }
-    .btn-primary{
-      background:linear-gradient(135deg,var(--green),var(--green-strong));
-      color:#06120a;
-    }
-    .btn-secondary{
-      background:rgba(255,255,255,.05);
-      border:1px solid var(--line);
-      color:#fff;
-    }
+    .btn-primary{background:linear-gradient(135deg,var(--green),var(--green2)); color:#06120a}
+    .btn-secondary{background:rgba(255,255,255,.05); border:1px solid var(--line); color:#fff}
     .btn:hover{transform:translateY(-1px)}
-
-    .stats-grid{
-      margin-top:26px;
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:12px;
-    }
+    .stats-grid{margin-top:26px; display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
     .stat-box{
-      border:1px solid var(--line);
-      border-radius:20px;
-      background:rgba(255,255,255,.04);
-      padding:16px;
+      border:1px solid var(--line); border-radius:20px; background:rgba(255,255,255,.04); padding:16px;
     }
-    .stat-box strong{
-      display:block;
-      font-size:24px;
-      margin-bottom:6px;
-    }
-    .stat-box span{
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.45;
-      display:block;
-    }
+    .stat-box strong{display:block; font-size:24px; margin-bottom:6px}
+    .stat-box span{color:var(--muted); font-size:13px; line-height:1.45; display:block}
 
-    .side-stack{display:grid;gap:16px}
+    .side-stack{display:grid; gap:16px}
     .panel{padding:22px}
-    .panel h3{margin:0 0 8px;font-size:21px}
-    .panel p{margin:0;color:var(--muted);line-height:1.65}
-    .chip-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:16px;
-    }
+    .panel h3{margin:0 0 8px; font-size:21px}
+    .panel p{margin:0; color:var(--muted); line-height:1.65}
+    .chip-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px}
     .chip{
-      padding:9px 12px;
-      border-radius:999px;
-      background:rgba(255,255,255,.05);
-      border:1px solid var(--line);
-      color:#fff;
-      font-size:13px;
+      padding:9px 12px; border-radius:999px; background:rgba(255,255,255,.05); border:1px solid var(--line); color:#fff; font-size:13px;
     }
-
     .ad-wrap{
-      padding:12px;
-      border:1px dashed rgba(255,255,255,.16);
-      border-radius:20px;
-      background:rgba(255,255,255,.03);
+      padding:12px; border:1px dashed rgba(255,255,255,.16); border-radius:20px; background:rgba(255,255,255,.03);
     }
 
     .section{padding:16px 0}
     .section-head{
-      display:flex;
-      align-items:end;
-      justify-content:space-between;
-      gap:14px;
-      margin-bottom:18px;
+      display:flex; align-items:end; justify-content:space-between; gap:14px; margin-bottom:18px;
     }
-    .section-title{
-      margin:0;
-      font-size:clamp(24px, 3vw, 38px);
-      letter-spacing:-.6px;
-    }
-    .section-subtitle{
-      margin:8px 0 0;
-      color:var(--muted);
-      max-width:760px;
-      line-height:1.65;
-    }
+    .section-title{margin:0; font-size:clamp(24px, 3vw, 38px); letter-spacing:-.6px}
+    .section-subtitle{margin:8px 0 0; color:var(--muted); max-width:760px; line-height:1.65}
     .toolbar button{
-      border:none;
-      cursor:pointer;
-      padding:12px 18px;
-      border-radius:999px;
-      font-weight:800;
-      background:rgba(255,255,255,.08);
-      color:#fff;
-      border:1px solid var(--line);
+      border:none; cursor:pointer; padding:12px 18px; border-radius:999px; font-weight:800;
+      background:rgba(255,255,255,.08); color:#fff; border:1px solid var(--line);
     }
 
-    .grid-3,.grid-2{
-      display:grid;
-      gap:18px;
-    }
+    .grid-3,.grid-2{display:grid; gap:18px}
     .grid-3{grid-template-columns:repeat(3,1fr)}
     .grid-2{grid-template-columns:repeat(2,1fr)}
 
-    .card{
-      padding:20px;
-      min-height:100%;
-    }
-    .card-top{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-      margin-bottom:14px;
-    }
+    .card{padding:20px; min-height:100%}
+    .card-top{display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:14px}
     .tag{
+      display:inline-flex; align-items:center; border-radius:999px; padding:8px 12px;
+      background:rgba(34,197,94,.11); border:1px solid rgba(34,197,94,.22); color:#dffbe8; font-size:12px; font-weight:800;
+    }
+    .score{font-size:14px; color:var(--yellow); font-weight:800}
+    .card h3{margin:0 0 10px; font-size:22px; letter-spacing:-.3px}
+    .card p{margin:0; color:var(--muted); line-height:1.65; font-size:15px}
+    .meta-list{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px}
+    .meta{
+      padding:8px 12px; border-radius:999px; background:rgba(255,255,255,.05); border:1px solid var(--line); color:#e1e9f4; font-size:13px;
+    }
+
+    .gallery-card{
+      overflow:hidden;
+      padding:0;
+    }
+    .gallery-media{
+      width:100%;
+      aspect-ratio:16/10;
+      object-fit:cover;
+      border-bottom:1px solid var(--line);
+      background:#0d1727;
+    }
+    .gallery-content{padding:18px 18px 20px}
+    .gallery-badge{
       display:inline-flex;
-      align-items:center;
-      border-radius:999px;
+      margin-bottom:12px;
       padding:8px 12px;
-      background:rgba(34,197,94,.11);
-      border:1px solid rgba(34,197,94,.22);
-      color:#dffbe8;
+      border-radius:999px;
+      background:rgba(250,204,21,.10);
+      border:1px solid rgba(250,204,21,.20);
+      color:#fff2bd;
       font-size:12px;
       font-weight:800;
     }
-    .score{
-      font-size:14px;
-      color:var(--yellow);
-      font-weight:800;
-    }
-    .card h3{
-      margin:0 0 10px;
-      font-size:22px;
-      letter-spacing:-.3px;
-    }
-    .card p{
-      margin:0;
-      color:var(--muted);
-      line-height:1.65;
-      font-size:15px;
-    }
-    .meta-list{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:16px;
-    }
-    .meta{
-      padding:8px 12px;
-      border-radius:999px;
-      background:rgba(255,255,255,.05);
-      border:1px solid var(--line);
-      color:#e1e9f4;
-      font-size:13px;
-    }
 
-    .video-link{
-      display:flex;
-      flex-direction:column;
-      gap:14px;
-      height:100%;
-    }
-    .video-thumb{
-      aspect-ratio:16/9;
-      border-radius:18px;
-      border:1px solid var(--line);
-      display:grid;
-      place-items:center;
-      font-size:42px;
-      background:
-        linear-gradient(180deg, rgba(251,113,133,.10), rgba(34,197,94,.08)),
-        radial-gradient(circle at top left, rgba(250,204,21,.16), transparent 30%),
-        #0d1727;
-    }
-    .video-source{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      color:#d9f7e3;
-      font-weight:700;
-      font-size:14px;
-    }
-
-    .rank-list{display:grid;gap:14px}
+    .rank-list{display:grid; gap:14px}
     .rank-card{
-      padding:18px 20px;
-      display:grid;
-      grid-template-columns:auto 1fr auto;
-      gap:16px;
-      align-items:center;
+      padding:18px 20px; display:grid; grid-template-columns:auto 1fr auto; gap:16px; align-items:center;
     }
     .rank-no{
-      width:54px;height:54px;border-radius:18px;
-      display:grid;place-items:center;
+      width:54px;height:54px;border-radius:18px; display:grid;place-items:center;
       background:linear-gradient(135deg, rgba(34,197,94,.18), rgba(250,204,21,.18));
-      border:1px solid var(--line);
-      font-size:22px;font-weight:800;
+      border:1px solid var(--line); font-size:22px;font-weight:800;
     }
-    .rank-card h4{margin:0 0 6px;font-size:20px}
-    .rank-card p{margin:0;color:var(--muted);line-height:1.55;font-size:14px}
+    .rank-card h4{margin:0 0 6px; font-size:20px}
+    .rank-card p{margin:0; color:var(--muted); line-height:1.55; font-size:14px}
     .rank-badge{
-      padding:10px 12px;
-      border-radius:999px;
-      background:rgba(255,255,255,.05);
-      border:1px solid var(--line);
-      font-size:12px;
-      white-space:nowrap;
+      padding:10px 12px; border-radius:999px; background:rgba(255,255,255,.05); border:1px solid var(--line); font-size:12px; white-space:nowrap;
+    }
+
+    .policy-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+    }
+    .policy-box{padding:22px}
+    .policy-box h3{margin:0 0 10px;font-size:24px}
+    .policy-box p{margin:0;color:var(--muted);line-height:1.7}
+    .policy-list{
+      margin:14px 0 0;
+      padding-left:18px;
+      color:var(--muted);
+      line-height:1.8;
     }
 
     .footer{padding:28px 0 40px}
     .footer-card{
-      padding:24px;
-      display:grid;
-      grid-template-columns:1fr auto;
-      gap:18px;
+      padding:24px; display:grid; grid-template-columns:1fr auto; gap:18px;
     }
-    .footer-card p{
-      margin:0;color:var(--muted);line-height:1.7
-    }
+    .footer-card p{margin:0;color:var(--muted);line-height:1.7}
     .footer-links{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      justify-content:flex-end;
-      align-content:flex-start;
+      display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end; align-content:flex-start;
     }
     .footer-links a{
-      padding:10px 14px;
-      border-radius:999px;
-      background:rgba(255,255,255,.05);
-      border:1px solid var(--line);
-      color:#fff;
-      font-size:14px;
+      padding:10px 14px; border-radius:999px; background:rgba(255,255,255,.05); border:1px solid var(--line); color:#fff; font-size:14px;
     }
 
     @media (max-width: 1100px){
       .hero-grid{grid-template-columns:1fr}
       .grid-3{grid-template-columns:repeat(2,1fr)}
     }
-
     @media (max-width: 760px){
-      .access-inner,.topbar-inner,.section-head,.footer-card{
-        flex-direction:column;
-        align-items:flex-start;
-      }
+      .access-inner,.topbar-inner,.section-head,.footer-card{flex-direction:column; align-items:flex-start}
       .topbar-inner{padding:12px 0}
       .nav{width:100%}
-      .hero-card{padding:22px;min-height:auto}
-      .stats-grid,.grid-3,.grid-2{grid-template-columns:1fr}
-      .rank-card{
-        grid-template-columns:1fr;
-        align-items:flex-start;
-      }
+      .hero-card{padding:22px; min-height:auto}
+      .stats-grid,.grid-3,.grid-2,.policy-grid{grid-template-columns:1fr}
+      .rank-card{grid-template-columns:1fr; align-items:flex-start}
       .footer-links{justify-content:flex-start}
       .metric-chip{width:100%}
     }
@@ -475,7 +266,7 @@
       <div class="access-metrics">
         <div class="metric-chip">Acessos registrados: <strong id="visitCount">carregando...</strong></div>
         <div class="metric-chip">Atualização: <strong id="lastUpdate">aguardando...</strong></div>
-        <div class="metric-chip">Status: <strong id="counterStatus">ativo</strong></div>
+        <div class="metric-chip">Status: <strong id="counterStatus">iniciando</strong></div>
       </div>
     </div>
   </div>
@@ -490,8 +281,9 @@
         <a href="#alimentacao">Alimentação</a>
         <a href="#receitas">Receitas</a>
         <a href="#treinos">Treinos</a>
-        <a href="#videos">Vídeos</a>
+        <a href="#galeria">Galeria</a>
         <a href="#academias">Academias</a>
+        <a href="#privacidade">Privacidade</a>
       </nav>
     </div>
   </header>
@@ -500,15 +292,15 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-card">
-          <span class="eyebrow">⚡ Conteúdo fitness pensado para seu dia</span>
-          <h1>Treino, alimentação e motivação em um portal com cara de app fitness moderno.</h1>
+          <span class="eyebrow">⚡ Conteúdo fitness pensado para o dia a dia</span>
+          <h1>Treino, alimentação e rotina fitness em um portal moderno e agradável de navegar.</h1>
           <p>
-            Navegue por ideias de refeições, receitas práticas, treinos por objetivo, vídeos livres de uso
-            e academias em destaque em um layout forte, limpo e confortável para celular e desktop.
+            Descubra ideias de refeições, receitas práticas, treinos por objetivo, imagens inspiracionais de treino
+            e academias em destaque em uma página leve, organizada e confortável para celular e desktop.
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#treinos">Ver treinos</a>
-            <a class="btn btn-secondary" href="#receitas">Explorar receitas</a>
+            <a class="btn btn-secondary" href="#galeria">Ver imagens fitness</a>
           </div>
           <div class="stats-grid">
             <div class="stat-box">
@@ -520,27 +312,27 @@
               <span>disposição otimizada para smartphone, tablet e computador</span>
             </div>
             <div class="stat-box">
-              <strong>Portal leve</strong>
-              <span>experiência visual forte sem ficar pesada para navegar</span>
+              <strong>Leitura clara</strong>
+              <span>seções bem separadas para facilitar navegação e permanência</span>
             </div>
           </div>
         </div>
 
         <div class="side-stack">
           <div class="panel">
-            <h3>Destaques do momento</h3>
-            <p>Uma experiência pensada para facilitar a rotina de quem quer foco, constância e praticidade no mundo fitness.</p>
+            <h3>Destaques do portal</h3>
+            <p>Uma experiência pensada para quem quer foco, constância, praticidade e um visual mais forte no universo fitness.</p>
             <div class="chip-row">
               <span class="chip">Pratos rápidos</span>
               <span class="chip">Treinos por objetivo</span>
-              <span class="chip">Motivação diária</span>
+              <span class="chip">Imagens inspiracionais</span>
               <span class="chip">Academias em alta</span>
             </div>
           </div>
 
           <div class="panel">
-            <h3>Visual mais forte e leitura melhor</h3>
-            <p>Blocos maiores, melhor espaçamento, navegação clara e seções organizadas para tocar bem no celular e ficar elegante no desktop.</p>
+            <h3>Mais estável para aprovação</h3>
+            <p>O site foi ajustado para remover embeds desnecessários, manter conteúdo legível e incluir seções úteis ao visitante, como privacidade e contato.</p>
           </div>
 
           <div class="ad-wrap">
@@ -587,7 +379,7 @@
         <div class="section-head">
           <div>
             <h2 class="section-title">Programas de treino</h2>
-            <p class="section-subtitle">Modelos de treino para diferentes momentos e objetivos, com divisão mais clara e fácil de acompanhar.</p>
+            <p class="section-subtitle">Modelos de treino para diferentes momentos e objetivos, com divisão clara e fácil de acompanhar.</p>
           </div>
           <div class="toolbar"><button onclick="renderWorkouts()">Atualizar treinos</button></div>
         </div>
@@ -595,16 +387,16 @@
       </div>
     </section>
 
-    <section id="videos" class="section">
+    <section id="galeria" class="section">
       <div class="container">
         <div class="section-head">
           <div>
-            <h2 class="section-title">Vídeos livres de uso</h2>
-            <p class="section-subtitle">Seleção com links para bancos de vídeo que permitem uso livre em projetos, em vez de embeds com direitos incertos.</p>
+            <h2 class="section-title">Imagens fitness e de treino</h2>
+            <p class="section-subtitle">Galeria visual inspirada no universo fitness, exibida diretamente no site e sem depender de vídeos externos.</p>
           </div>
-          <div class="toolbar"><button onclick="renderVideos()">Atualizar seleção</button></div>
+          <div class="toolbar"><button onclick="renderGallery()">Trocar galeria</button></div>
         </div>
-        <div class="grid-2" id="videosGrid"></div>
+        <div class="grid-2" id="galleryGrid"></div>
       </div>
     </section>
 
@@ -630,20 +422,43 @@
       </div>
     </section>
 
+    <section id="privacidade" class="section">
+      <div class="container policy-grid">
+        <div class="policy-box">
+          <h3>Privacidade</h3>
+          <p>Este portal pode utilizar cookies e tecnologias semelhantes para melhorar a experiência do visitante, medir acessos e exibir publicidade. Ao navegar no site, você concorda com esse uso.</p>
+          <ul class="policy-list">
+            <li>Dados de acesso podem ser registrados para análise de desempenho da página.</li>
+            <li>Anúncios podem usar cookies para personalização e medição.</li>
+            <li>O visitante pode ajustar preferências diretamente no navegador.</li>
+          </ul>
+        </div>
+        <div class="policy-box">
+          <h3>Contato e uso do conteúdo</h3>
+          <p>As informações do site têm finalidade informativa e inspiracional. Para dúvidas, sugestões ou solicitações, utilize o contato abaixo.</p>
+          <ul class="policy-list">
+            <li>E-mail: contato@mudehoje.netlify.app</li>
+            <li>Conteúdo voltado a bem-estar, treino e alimentação do dia a dia.</li>
+            <li>Procure orientação profissional para necessidades específicas de saúde.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <section class="footer">
       <div class="container">
         <div class="footer-card">
           <div>
             <h3 style="margin-top:0;font-size:26px;">FitVerse</h3>
-            <p>Um portal voltado ao público fitness com visual moderno, navegação melhor distribuída e informações fáceis de consumir no celular e no desktop.</p>
+            <p>Um portal voltado ao público fitness com visual moderno, leitura clara e seções úteis para quem quer treinar melhor, comer melhor e manter constância.</p>
           </div>
           <div class="footer-links">
             <a href="#topo">Início</a>
             <a href="#alimentacao">Alimentação</a>
             <a href="#receitas">Receitas</a>
             <a href="#treinos">Treinos</a>
-            <a href="#videos">Vídeos</a>
-            <a href="#academias">Academias</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#privacidade">Privacidade</a>
           </div>
         </div>
       </div>
@@ -678,30 +493,30 @@
       {tag:"Constância", title:"Plano semanal mais organizado", text:"Separar grupos e descanso ajuda a não treinar no improviso.", meta:["Planejamento","Semana","Regularidade"], score:"🔥 Equilibrado"}
     ];
 
-    const videoSources = [
+    const gallery = [
       {
-        tag:"Pixabay",
-        title:"Biblioteca de vídeos fitness e treino",
-        text:"Vídeos royalty-free com uso livre e sem necessidade de atribuição, ideais para selecionar clipes seguros para o portal.",
-        link:"https://pixabay.com/videos/search/fitness/"
+        badge:"Imagem fitness",
+        title:"Treino de força e foco",
+        text:"Imagem ilustrativa inspirada no universo de musculação, intensidade e constância.",
+        img:"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 750'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop stop-color='%230b1220'/><stop offset='1' stop-color='%2316a34a'/></linearGradient></defs><rect width='1200' height='750' fill='url(%23g)'/><circle cx='950' cy='120' r='180' fill='rgba(250,204,21,0.18)'/><rect x='110' y='490' width='980' height='40' rx='20' fill='%23dbeafe' opacity='0.15'/><circle cx='330' cy='300' r='62' fill='%23f8fafc'/><rect x='285' y='365' width='90' height='165' rx='35' fill='%23f8fafc'/><rect x='250' y='410' width='42' height='170' rx='20' fill='%23f8fafc'/><rect x='368' y='410' width='42' height='170' rx='20' fill='%23f8fafc'/><rect x='204' y='330' width='300' height='28' rx='14' fill='%23facc15'/><circle cx='192' cy='344' r='34' fill='%23facc15'/><circle cx='516' cy='344' r='34' fill='%23facc15'/><text x='85' y='110' fill='%23ffffff' font-family='Arial' font-size='52' font-weight='700'>FITNESS</text><text x='85' y='170' fill='%23dbeafe' font-family='Arial' font-size='28'>força, foco e evolução</text></svg>"
       },
       {
-        tag:"Pexels",
-        title:"Coleção de vídeos fitness gratuitos",
-        text:"Banco com vídeos gratuitos para uso pessoal e comercial, útil para renovar a parte visual do site.",
-        link:"https://www.pexels.com/search/videos/fitness/"
+        badge:"Imagem treino",
+        title:"Movimento e condicionamento",
+        text:"Visual pensado para transmitir energia, cardio e ritmo na rotina fitness.",
+        img:"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 750'><defs><linearGradient id='g2' x1='0' y1='0' x2='1' y2='1'><stop stop-color='%23111827'/><stop offset='1' stop-color='%230ea5e9'/></linearGradient></defs><rect width='1200' height='750' fill='url(%23g2)'/><circle cx='1030' cy='120' r='160' fill='rgba(34,197,94,0.16)'/><path d='M150 560 C310 420, 430 430, 520 330 C610 230, 740 190, 1040 130' stroke='%23facc15' stroke-width='16' fill='none' stroke-linecap='round'/><circle cx='430' cy='210' r='58' fill='%23f8fafc'/><rect x='390' y='270' width='85' height='150' rx='32' fill='%23f8fafc'/><rect x='338' y='308' width='50' height='160' rx='24' transform='rotate(25 338 308)' fill='%23f8fafc'/><rect x='478' y='315' width='50' height='165' rx='24' transform='rotate(-28 478 315)' fill='%23f8fafc'/><rect x='374' y='405' width='48' height='185' rx='24' transform='rotate(15 374 405)' fill='%23f8fafc'/><rect x='454' y='405' width='48' height='185' rx='24' transform='rotate(-15 454 405)' fill='%23f8fafc'/><text x='90' y='110' fill='%23ffffff' font-family='Arial' font-size='52' font-weight='700'>TRAIN</text><text x='90' y='170' fill='%23dbeafe' font-family='Arial' font-size='28'>ritmo, resistência e energia</text></svg>"
       },
       {
-        tag:"Mixkit",
-        title:"Clipes livres de uso para projetos",
-        text:"Galeria com vídeos free/royalty-free; sempre vale conferir a licença específica do clipe escolhido.",
-        link:"https://mixkit.co/free-stock-video/fitness/"
+        badge:"Imagem lifestyle",
+        title:"Rotina saudável e equilíbrio",
+        text:"Arte visual para representar alimentação, bem-estar e consistência no dia a dia.",
+        img:"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 750'><defs><linearGradient id='g3' x1='0' y1='0' x2='1' y2='1'><stop stop-color='%230b1220'/><stop offset='1' stop-color='%23f97316'/></linearGradient></defs><rect width='1200' height='750' fill='url(%23g3)'/><circle cx='150' cy='120' r='110' fill='rgba(34,197,94,0.15)'/><rect x='210' y='440' width='780' height='120' rx='28' fill='%23ffffff' opacity='0.12'/><circle cx='370' cy='298' r='130' fill='rgba(255,255,255,0.10)'/><path d='M365 220 C295 260, 265 350, 325 405 C400 473, 515 428, 524 332 C533 236, 451 188, 365 220Z' fill='%2322c55e'/><path d='M385 245 C430 310, 430 360, 391 407' stroke='%23d9f99d' stroke-width='14' fill='none' stroke-linecap='round'/><circle cx='705' cy='308' r='88' fill='%23facc15'/><circle cx='770' cy='370' r='65' fill='%23ef4444'/><circle cx='650' cy='390' r='58' fill='%2322c55e'/><text x='85' y='110' fill='%23ffffff' font-family='Arial' font-size='52' font-weight='700'>HEALTHY</text><text x='85' y='170' fill='%23dbeafe' font-family='Arial' font-size='28'>rotina saudável e equilíbrio</text></svg>"
       },
       {
-        tag:"Coverr",
-        title:"Vídeos gratuitos para web e campanhas",
-        text:"Bancos com clipes liberados para uso em sites e projetos visuais, sem precisar apostar em embeds com direitos incertos.",
-        link:"https://coverr.co/stock-video-footage/fitness"
+        badge:"Imagem academia",
+        title:"Ambiente de academia moderno",
+        text:"Visual inspirado em equipamentos, ambiente escuro e treinos consistentes.",
+        img:"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 750'><defs><linearGradient id='g4' x1='0' y1='0' x2='1' y2='1'><stop stop-color='%2307111d'/><stop offset='1' stop-color='%234b5563'/></linearGradient></defs><rect width='1200' height='750' fill='url(%23g4)'/><rect x='140' y='130' width='920' height='460' rx='30' fill='%23ffffff' opacity='0.05'/><rect x='215' y='255' width='770' height='16' rx='8' fill='%23f8fafc'/><rect x='280' y='210' width='14' height='250' rx='7' fill='%23f8fafc'/><rect x='906' y='210' width='14' height='250' rx='7' fill='%23f8fafc'/><circle cx='242' cy='263' r='42' fill='%23facc15'/><circle cx='958' cy='263' r='42' fill='%23facc15'/><rect x='510' y='336' width='180' height='26' rx='13' fill='%2322c55e'/><rect x='470' y='390' width='260' height='18' rx='9' fill='%23f8fafc'/><rect x='550' y='405' width='100' height='95' rx='16' fill='%23f8fafc' opacity='0.9'/><text x='85' y='110' fill='%23ffffff' font-family='Arial' font-size='52' font-weight='700'>GYM</text><text x='85' y='170' fill='%23dbeafe' font-family='Arial' font-size='28'>estrutura, ambiente e desempenho</text></svg>"
       }
     ];
 
@@ -742,19 +557,16 @@
     function renderRecipes(){ renderCardGrid("recipesGrid", recipes); }
     function renderWorkouts(){ renderCardGrid("workoutsGrid", workouts); }
 
-    function renderVideos(){
-      const target = document.getElementById("videosGrid");
-      target.innerHTML = shuffle(videoSources).map(item => `
-        <article class="card">
-          <a class="video-link" href="${item.link}" target="_blank" rel="noopener noreferrer">
-            <div class="video-thumb">▶</div>
-            <div class="card-top">
-              <span class="tag">${item.tag}</span>
-              <span class="video-source">Abrir coleção</span>
-            </div>
+    function renderGallery(){
+      const target = document.getElementById("galleryGrid");
+      target.innerHTML = shuffle(gallery).map(item => `
+        <article class="card gallery-card">
+          <img class="gallery-media" src="${item.img}" alt="${item.title}">
+          <div class="gallery-content">
+            <span class="gallery-badge">${item.badge}</span>
             <h3>${item.title}</h3>
             <p>${item.text}</p>
-          </a>
+          </div>
         </article>
       `).join("");
     }
@@ -774,36 +586,34 @@
     }
 
     async function updateVisitCounter(){
-      const key = "fitverse-mudehoje-netlify-app-home";
-      const hitUrl = `https://countapi.mileshilliard.com/api/v1/hit/${key}`;
-      const getUrl = `https://countapi.mileshilliard.com/api/v1/get/${key}`;
+      const namespace = "mudehoje.netlify.app";
+      const key = "fitverse-home";
+      const hitUrl = `https://api.countapi.xyz/hit/${namespace}/${key}`;
       const visitEl = document.getElementById("visitCount");
       const timeEl = document.getElementById("lastUpdate");
       const statusEl = document.getElementById("counterStatus");
 
       try{
-        const hitResp = await fetch(hitUrl, {cache:"no-store"});
-        const hitData = await hitResp.json();
-        if(typeof hitData.value === "number"){
-          visitEl.textContent = hitData.value.toLocaleString("pt-BR");
+        const response = await fetch(hitUrl, { cache: "no-store" });
+        const data = await response.json();
+        if (typeof data.value === "number"){
+          visitEl.textContent = data.value.toLocaleString("pt-BR");
+          statusEl.textContent = "ativo";
         } else {
-          const getResp = await fetch(getUrl, {cache:"no-store"});
-          const getData = await getResp.json();
-          visitEl.textContent = typeof getData.value === "number" ? getData.value.toLocaleString("pt-BR") : "indisponível";
+          visitEl.textContent = "indisponível";
+          statusEl.textContent = "sem leitura";
         }
-        timeEl.textContent = new Date().toLocaleString("pt-BR");
-        statusEl.textContent = "coletando acessos";
-      } catch (e){
+      } catch (error){
         visitEl.textContent = "indisponível";
-        timeEl.textContent = new Date().toLocaleString("pt-BR");
-        statusEl.textContent = "falha na leitura";
+        statusEl.textContent = "falha externa";
       }
+      timeEl.textContent = new Date().toLocaleString("pt-BR");
     }
 
     renderTips();
     renderRecipes();
     renderWorkouts();
-    renderVideos();
+    renderGallery();
     renderGyms();
     updateVisitCounter();
     setInterval(updateVisitCounter, 30000);
